@@ -2,7 +2,6 @@
 import { ref } from "vue";
 
 const dropdownOpen = ref(false);
-
 </script>
 
 <template>
@@ -10,10 +9,7 @@ const dropdownOpen = ref(false);
     class="flex items-center justify-between px-6 py-4 bg-white border-b-4 border-custom"
   >
     <div class="flex items-center">
-      <button
-        class="text-gray-500 focus:outline-none lg:hidden"
-        
-      >
+      <button class="text-gray-500 focus:outline-none lg:hidden">
         <svg
           class="w-6 h-6"
           viewBox="0 0 24 24"

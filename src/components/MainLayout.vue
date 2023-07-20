@@ -100,7 +100,7 @@ import posts from "../../Data/sample";
                     <!-- Post Body -->
                     <p class="text-gray-800">
                       {{ post.postBody }}
-                      <img src="" alt="post body" />
+                      <img :src="post.postImage" alt="post body" />
                     </p>
 
                     <!-- Footer -->
