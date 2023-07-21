@@ -271,7 +271,7 @@ const inactiveClass =
                 />
                 <span class="text-gray-700">Horror</span>
               </label>
-              <div class="more-filters mt-4 text-sm text-custom">
+              <div class="more-filters mt-4 text-xs text-custom">
                 <a href="#">View 50 more ....</a>
               </div>
             </div>
