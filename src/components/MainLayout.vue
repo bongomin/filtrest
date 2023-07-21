@@ -74,7 +74,7 @@ import posts from "../../Data/sample";
                       <img
                         :src="post.postersImage"
                         alt="User Image"
-                        class="w-12 h-12 rounded-full mr-4"
+                        class="w-10 h-10 rounded-full mr-4"
                       />
                       <div class="text-gray-800 flex flex-col">
                         <span class="font-semibold">{{
