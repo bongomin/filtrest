@@ -100,7 +100,7 @@ const dropdownOpen = ref(false);
                         <!-- Chat Icon -->
                         <div class="inline-block mr-4">
                           <svg
-                            class="fill-current h-5 w-5 text-gray-700"
+                            class="fill-current h-5 w-5 text-gray-700 cursor-pointer"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                           >
@@ -114,7 +114,7 @@ const dropdownOpen = ref(false);
 
                         <div class="inline-block relative">
                           <svg
-                            class="fill-current h-5 w-5 text-gray-700"
+                            class="fill-current h-5 w-5 text-gray-700 cursor-pointer"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             @click="dropdownOpen = !dropdownOpen"
@@ -210,7 +210,7 @@ const dropdownOpen = ref(false);
                             d="M10 18a1 1 0 01-.64-.23c-.26-.21-5.61-4.5-5.61-9.48C3.75 4.04 6.36 2 10 2s6.25 2.04 6.25 6.29c0 4.98-5.35 9.27-5.61 9.48a1 1 0 01-.64.23zM10 4a1 1 0 100-2 1 1 0 000 2z"
                           />
                         </svg>
-                        <span class="ml-1 text-sm text-gray-600">56 Likes</span>
+                        <span class="ml-1 text-sm text-gray-600 cursor-pointer">56 Likes</span>
                       </div>
                       <div class="flex items-center mr-4">
                         <svg
@@ -222,7 +222,7 @@ const dropdownOpen = ref(false);
                             d="M15 7a1 1 0 01.993.883L16 8v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8c0-.387.177-.747.48-.983l.023-.017 7-4a1 1 0 011.014 0l7 4a1 1 0 01.48.983L17 8a1 1 0 01-1-1V5a1 1 0 01-1-1 1 1 0 011-1zM7 15l5-2.864L17 15V8.236L12 11l-5-2.764V15z"
                           />
                         </svg>
-                        <span class="ml-1 text-sm text-gray-600">Share</span>
+                        <span class="ml-1 text-sm text-gray-600 cursor-pointer">Share</span>
                       </div>
                       <div class="flex items-center">
                         <svg
@@ -234,7 +234,7 @@ const dropdownOpen = ref(false);
                             d="M12 4a1 1 0 011 1v9a3 3 0 01-3 3H6a3 3 0 01-3-3V5a1 1 0 112 0v9a1 1 0 001 1h4a1 1 0 100-2H7a1 1 0 110-2h3a1 1 0 001-1V5a1 1 0 011-1z"
                           />
                         </svg>
-                        <span class="ml-1 text-sm text-gray-600">Comment</span>
+                        <span class="ml-1 text-sm text-gray-600 cursor-pointer">Comment</span>
                       </div>
                     </div>
                     <div class="w-full flex items-center py-3 px-1">

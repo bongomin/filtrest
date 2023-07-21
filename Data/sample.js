@@ -1,6 +1,6 @@
 const posts = [
     {
-        createdAt: "2023-07-20 12:30 PM",
+        createdAt: "10 mins",
         postersImage: "src/assets/profile3.jpeg",
         creatorName: "John Doe",
         postImage: "src/assets/image2.jpg",
@@ -10,7 +10,7 @@ const posts = [
         liked: 56,
     },
     {
-        createdAt: "2023-07-19 10:15 AM",
+        createdAt: "40 mins",
         postersImage: "src/assets/profile1.jpeg",
         creatorName: "Jane Smith",
         postImage: "src/assets/image1.jpg",
@@ -20,7 +20,7 @@ const posts = [
         liked: 102,
     },
     {
-        createdAt: "2023-07-18 3:45 PM",
+        createdAt: "60 mins",
         postersImage: "src/assets/profile3.jpeg",
         creatorName: "Bob Johnson",
         postImage: "src/assets/image2.jpg",

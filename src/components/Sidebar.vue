@@ -54,8 +54,88 @@ const inactiveClass =
       <!-- main side bar div -->
       <div class="flex justify-center w-full">
         <div class="flex w-60 p-5">
-          <div class="filters flex-1  text-1xl text-white">Filters</div>
-          <span class="ml-auto text-gray">reset</span>
+          <div class="filters flex-1 text-1xl text-white">Filters</div>
+          <span class="ml-auto text-gray text-white cursor-pointer">reset</span>
+        </div>
+      </div>
+      <div class="skills-contaner w-60 p-4 shadow-md">
+        <div class="skills-list">
+          <button
+            type="button"
+            class="inline-flex ml-1 items-center px-3 py-1 text-xs font-medium text-white bg-indigo-500"
+          >
+            facebook
+            <svg
+              class="w-4 h-4 ml-2 -mr-1 text-white cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.293 5.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="inline-flex m-1 items-center px-3 py-1 text-xs font-medium text-white bg-indigo-500"
+          >
+            Google
+            <svg
+              class="w-4 h-4 ml-2 -mr-1 text-white cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.293 5.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="inline-flex m-1 items-center px-3 py-1 text-xs font-medium text-white bg-indigo-500"
+          >
+            US
+            <svg
+              class="w-4 h-4 ml-2 -mr-1 text-white cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.293 5.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-indigo-500"
+          >
+            Uganda
+            <svg
+              class="w-4 h-4 ml-2 -mr-1 text-white cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.293 5.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
