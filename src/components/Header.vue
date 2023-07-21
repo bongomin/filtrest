@@ -72,7 +72,7 @@ const dropdownOpen = ref(false);
         >
           <img
             class="object-cover w-full h-full"
-            src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80"
+            src="src/assets/profile1.jpeg"
             alt="Your avatar"
           />
         </button>

@@ -1,7 +1,7 @@
 const posts = [
     {
         createdAt: "2023-07-20 12:30 PM",
-        postersImage: "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80",
+        postersImage: "src/assets/profile3.jpeg",
         creatorName: "John Doe",
         postImage: "src/assets/image2.jpg",
         socialMediaIcon: "https://example.com/facebook-icon.png",
@@ -11,7 +11,7 @@ const posts = [
     },
     {
         createdAt: "2023-07-19 10:15 AM",
-        postersImage: "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80",
+        postersImage: "src/assets/profile1.jpeg",
         creatorName: "Jane Smith",
         postImage: "src/assets/image1.jpg",
         socialMediaIcon: "https://example.com/twitter-icon.png",
@@ -21,7 +21,7 @@ const posts = [
     },
     {
         createdAt: "2023-07-18 3:45 PM",
-        postersImage: "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80",
+        postersImage: "src/assets/profile3.jpeg",
         creatorName: "Bob Johnson",
         postImage: "src/assets/image2.jpg",
         socialMediaIcon: "https://example.com/instagram-icon.png",
