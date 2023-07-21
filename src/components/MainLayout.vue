@@ -173,6 +173,21 @@ import posts from "../../Data/sample";
                         <span class="ml-1 text-sm text-gray-600">Comment</span>
                       </div>
                     </div>
+                    <div class="w-full flex items-center py-3 px-1">
+                      <!-- User Image with rounded avatar -->
+                      <img
+                        src="src/assets/profile1.jpeg"
+                        alt="User Image"
+                        class="w-8 h-8 rounded-full mr-4"
+                      />
+
+                      <!-- Input field occupying the other section -->
+                      <input
+                        type="text"
+                        class="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                        placeholder="Write your comment here"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
