@@ -1,7 +1,9 @@
 <script setup>
+import { ref } from "vue";
 import Sidebar from "../components/Sidebar.vue";
 import Header from "../components/Header.vue";
 import posts from "../../Data/sample";
+const dropdownOpen = ref(false);
 </script>
 
 <template>
@@ -94,35 +96,97 @@ import posts from "../../Data/sample";
                           </svg>
                         </span>
                       </div>
-
                       <div class="ml-auto">
-                        <!-- Delete Dropdown -->
-                        <div class="dropdown inline-block relative">
-                          <button
-                            class="bg-gray-200 text-gray-700 py-1 px-2 rounded inline-flex items-center"
+                        <!-- Chat Icon -->
+                        <div class="inline-block mr-4">
+                          <svg
+                            class="fill-current h-5 w-5 text-gray-700"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
                           >
-                            <span class="mr-1">Delete</span>
-                            <svg
-                              class="fill-current h-4 w-4"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M13.414 6L10 9.414 6.586 6 6 6.586 9.414 10l-3.405 3.405.586.586L10 10.586l3.414 3.405.586-.586L10.586 10l3.405-3.414-.587-.586z"
-                                clip-rule="evenodd"
-                              />
-                            </svg>
-                          </button>
+                            <path
+                              fill-rule="evenodd"
+                              d="M3.293 5.293a1 1 0 011.414 0l2.988 2.988A3 3 0 009 9h8a3 3 0 013 3v2a1 1 0 01-1.555.832L15.6 14.6A4.996 4.996 0 0111 17H9a5 5 0 01-5-5V8a5 5 0 015-5h2a4.996 4.996 0 013.615 1.55L14.414 5.2a1 1 0 010 1.4l-2.988 2.988a3 3 0 00-1.444-.643L10 8h-1a1 1 0 01-.993-.883L8 7V6a1 1 0 011-1h1a1 1 0 01.993.883L11 6v1a1 1 0 01-1 1H8a1 1 0 01-.993-.883L7 7V6a3 3 0 013-3h1a3 3 0 012.828 2.017l.646-.646A1 1 0 0115.6 4.6l.693.693a4.996 4.996 0 01-2.558 2.13L11 7H9a3 3 0 00-2.827 2.018L3.293 5.293zM10 18a1 1 0 100 2 1 1 0 000-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="inline-block relative">
+                          <svg
+                            class="fill-current h-5 w-5 text-gray-700"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            @click="dropdownOpen = !dropdownOpen"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 3a2 2 0 100 4 2 2 0 000-4zM10 9a2 2 0 100 4 2 2 0 000-4zM10 15a2 2 0 100 4 2 2 0 000-4z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+
+                          <!-- Dropdown Menu for Three Vertical Dots -->
                           <ul
-                            class="dropdown-menu absolute hidden text-gray-700 pt-1"
+                            v-show="dropdownOpen"
+                            class="w-30 dropdown-menu absolute pt-1"
                           >
-                            <li class="">
+                            <li>
                               <a
-                                class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                                class="flex items-center rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                                 href="#"
-                                >Delete</a
                               >
+                                <svg
+                                  class="fill-current h-4 w-4 mr-2"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M13.414 6L10 9.414 6.586 6 6 6.586 9.414 10l-3.405 3.405.586.586L10 10.586l3.414 3.405.586-.586L10.586 10l3.405-3.414-.587-.586z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                Edit
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                class="flex items-center bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                                href="#"
+                              >
+                                <svg
+                                  class="fill-current h-4 w-4 mr-2"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M10 3a2 2 0 100 4 2 2 0 000-4zM10 9a2 2 0 100 4 2 2 0 000-4zM10 15a2 2 0 100 4 2 2 0 000-4z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                Share
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                class="flex items-center rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                                href="#"
+                              >
+                                <svg
+                                  class="fill-current h-4 w-4 mr-2"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M13.414 6L10 9.414 6.586 6 6 6.586 9.414 10l-3.405 3.405.586.586L10 10.586l3.414 3.405.586-.586L10.586 10l3.405-3.414-.587-.586z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                                Delete
+                              </a>
                             </li>
                           </ul>
                         </div>
