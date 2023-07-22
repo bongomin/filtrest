@@ -219,7 +219,6 @@ const inactiveClass =
         <div class="collapsables">
           <button
             class="flex text-white items-center justify-between w-full px-4 py-2 font-medium text-left bg-custom-500 hover:bg-custom-600 focus:outline-none shadow-md"
-            @click="toggleCollapse(1)"
           >
             Interests
             <span>
@@ -253,7 +252,11 @@ const inactiveClass =
               </svg>
             </span>
           </button>
-           <div class="relative mb-4">
+          <div
+            class="p-2 bg-white border-t border-gray-200"
+          >
+            <!-- Search Field ... -->
+              <div class="relative mb-4">
               <input
                 type="text"
                 class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-indigo-500"
@@ -275,11 +278,6 @@ const inactiveClass =
                 </svg>
               </div>
         </div>
-          <div
-            v-if="collapsed[1]"
-            class="p-2 bg-white border-t border-gray-200"
-          >
-            <!-- Search Field ... -->
 
             <!-- Checkbox Items -->
             <div class="check-boxes py-1">
