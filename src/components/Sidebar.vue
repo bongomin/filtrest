@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useSidebar } from "../composables/useSidebar";
 import TestTree from "../components/testTree.vue";
+import CountrySelector from '../components/CountrySector.vue'
 
 const collapsed = ref({
   1: true,
@@ -132,7 +133,8 @@ const inactiveClass =
           <span class="ml-auto text-gray text-white cursor-pointer">reset</span>
         </div>
       </div>
-      <div class="skills-contaner w-60 p-4 shadow-md">
+      <CountrySelector/>
+      <!-- <div class="skills-contaner w-60 p-4 shadow-md">
         <div class="skills-list">
           <button
             type="button"
@@ -211,8 +213,8 @@ const inactiveClass =
             </svg>
           </button>
         </div>
-      </div>
-      <div class="flex flex-col mt-3 p-2 space-y-4">
+      </div> -->
+      <div class="flex flex-col p-2 space-y-4">
         <!-- Collapsible 1 -->
         <div class="collapsables">
           <button
