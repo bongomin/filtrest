@@ -1,4 +1,7 @@
 <script setup>
+import { defineProps } from 'vue';
+const { openDis } = defineProps(['openDis']);
+
 </script>
 <template>
   <div class="flex justify-center w-full shadow-bottom mb-3">

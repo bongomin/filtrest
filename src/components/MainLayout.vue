@@ -6,6 +6,12 @@ import posts from "../../Data/sample";
 import DiscussionsSection from "./DiscussionsSection.vue";
 import WelcomePopup from '../components/WelcomePopup.vue'
 const dropdownOpen = ref(false);
+const disOpen = ref(false);
+
+const openDiscussionsSection = () => {
+  console.log('Open turn to true')
+  disOpen.value = !disOpen.value;
+}
 </script>
 
 <template>
@@ -244,7 +250,7 @@ const dropdownOpen = ref(false);
                           >56 Likes</span
                         >
                       </div>
-                      <div class="flex items-center">
+                      <div class="flex items-center" @click="openDiscussionsSection">
                         <svg
                           class="h-5 w-5 text-gray-600"
                           xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +286,7 @@ const dropdownOpen = ref(false);
             </div>
             <!-- Right Column -->
             <div class="w-1/3 p-2 bg-white">
-              <DiscussionsSection/>
+              <DiscussionsSection :openDis="disOpen"/>
             </div>
           </div>
         </div>
