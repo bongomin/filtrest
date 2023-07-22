@@ -38,11 +38,26 @@ const removeCountry = (index) => {
 
 <template>
   <div>
-    <div class="w-full p-2">
+    <div class="w-full p-2 relative">
+      <span class="absolute inset-y-0 left-2 flex items-center">
+        <svg
+          class="w-5 h-5 text-gray-500 ml-2"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
       <input
         v-model="inputValue"
         @input="filterCountries"
-        class="w-full p-2 border border-gray-300 rounded"
+        class="w-full p-2 pl-10 border border-gray-300 rounded"
         placeholder="Type a country name..."
       />
     </div>
