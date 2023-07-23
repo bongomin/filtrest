@@ -72,7 +72,7 @@ const dropdownOpen = ref(false);
         >
           <img
             class="object-cover w-full h-full"
-            src="src/assets/profile1.jpeg"
+            src="https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg"
             alt="Your avatar"
           />
         </button>
