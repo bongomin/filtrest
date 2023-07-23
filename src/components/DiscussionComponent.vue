@@ -1,8 +1,12 @@
 
 <script setup>
 const employeeImages = [
-  'src/assets/profile1.jpeg',
-  'src/assets/profile3.jpeg',
+  'https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg',
+  'https://avatars.githubusercontent.com/u/39218838?s=400&u=b407be6b83e0f12427d744c39414d3214aa60b55&v=4',
+  'https://images.pexels.com/photos/8993561/pexels-photo-8993561.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg',
+   'https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg',
 ];
 
 // Function to get image source based on image number (for demonstration purposes)
@@ -26,7 +30,7 @@ const getImageSrc = (imageNum) => {
         </div>
         <div class="flex items-center">
           <img
-            v-for="imageNum in 3"
+            v-for="imageNum in 8"
             :src="getImageSrc(imageNum)"
             :alt="`Image ${imageNum}`"
             class="w-8 h-8 rounded-full inline-block -ml-4"
