@@ -1,8 +1,8 @@
 const posts = [
     {
         createdAt: "10 mins",
-        postersImage: "src/assets/profile3.jpeg",
-        creatorName: "John Doe",
+        postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
+        creatorName: "Daniel Danny",
         postImage: "src/assets/image2.jpg",
         socialMediaIcon: "https://example.com/facebook-icon.png",
         postBody:
@@ -13,7 +13,7 @@ const posts = [
     {
         createdAt: "40 mins",
         postersImage: "src/assets/profile1.jpeg",
-        creatorName: "Jane Smith",
+        creatorName: "Jane Danny",
         postImage: "src/assets/image1.jpg",
         socialMediaIcon: "https://example.com/twitter-icon.png",
         postBody:
@@ -23,7 +23,7 @@ const posts = [
     },
     {
         createdAt: "60 mins",
-        postersImage: "src/assets/profile3.jpeg",
+        postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
         creatorName: "Bob Johnson",
         postImage: "src/assets/image2.jpg",
         socialMediaIcon: "https://example.com/instagram-icon.png",
