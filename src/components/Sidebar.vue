@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { useSidebar } from "../composables/useSidebar";
 import TestTree from "../components/testTree.vue";
-import CountrySelector from '../components/CountrySector.vue'
+import CountrySelector from "../components/CountrySector.vue";
 
 const collapsed = ref({
   1: true,
@@ -59,21 +59,53 @@ async function updateTree(interest, index) {
     }
   } else {
     const selectedTreeItem = interest.subTree;
-    selectedTreeItem.push({
-      id: 201,
-      name: "Subcategory 1,2",
-      miniTree: [],
-    });
-    selectedTreeItem.push({
-      id: 202,
-      name: "Subcategory 1,2",
-      miniTree: [],
-    });
-    selectedTreeItem.push({
-      id: 203,
-      name: "Subcategory 1,2",
-      miniTree: [],
-    });
+    if (interest.name == "StreetFood") {
+      selectedTreeItem.push({
+        id: 201,
+        name: "Tacos",
+        miniTree: [],
+      });
+      selectedTreeItem.push({
+        id: 202,
+        name: "Kebabs",
+        miniTree: [],
+      });
+      selectedTreeItem.push({
+        id: 203,
+        name: "Poutine",
+        miniTree: [],
+      });
+    } else if (interest.name == "Snacks") {
+      selectedTreeItem.push({
+        id: 301,
+        name: "Chips",
+        miniTree: [],
+      });
+      selectedTreeItem.push({
+        id: 302,
+        name: "Popcorn",
+        miniTree: [],
+      });
+    } else if (interest.name == "Beverages") {
+      selectedTreeItem.push({
+        id: 401,
+        name: "Soda",
+        miniTree: [],
+      });
+      selectedTreeItem.push({
+        id: 402,
+        name: "Juice",
+        miniTree: [],
+      });
+    } else if (interest.name == "Desserts") {
+      selectedTreeItem.push({
+        id: 501,
+        name: "Ice Cream",
+        miniTree: [],
+      });
+    } else {
+      interest.subTree = [];
+    }
   }
 }
 
@@ -133,7 +165,7 @@ const inactiveClass =
           <span class="ml-auto text-gray text-white cursor-pointer">reset</span>
         </div>
       </div>
-      <CountrySelector/>
+      <CountrySelector />
       <div class="flex flex-col p-2 space-y-4">
         <!-- Collapsible 1 -->
         <div class="collapsables">
@@ -172,11 +204,9 @@ const inactiveClass =
               </svg>
             </span>
           </button>
-          <div
-            class="p-2 bg-white border-t border-gray-200"
-          >
+          <div class="p-2 bg-white border-t border-gray-200">
             <!-- Search Field ... -->
-              <div class="relative mb-4">
+            <div class="relative mb-4">
               <input
                 type="text"
                 class="w-full px-4 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-indigo-500"
@@ -197,7 +227,7 @@ const inactiveClass =
                   />
                 </svg>
               </div>
-        </div>
+            </div>
 
             <!-- Checkbox Items -->
             <div class="check-boxes py-1">
@@ -223,7 +253,7 @@ const inactiveClass =
                   <li
                     v-for="treeItem in interest.tree"
                     :key="'tree-' + treeItem.id"
-                    class="flex py-2 items-center space-x-2"
+                    class="py-2 items-center space-x-2 list-none"
                   >
                     <input
                       type="checkbox"
@@ -238,18 +268,28 @@ const inactiveClass =
                       {{ treeItem.name }}
                     </label>
                     <!-- sub item -->
-                    <!-- <ul class="ml-6 list-disc">
+                    <ul class="ml-6 list-disc">
                       <li
                         v-for="item in treeItem.subTree"
                         :key="'tree-' + item.id"
                         class="flex py-2 items-center space-x-2"
                       >
-                        <input
-                          type="checkbox"
-                          :id="'checkbox-' + item.id"
-                          class="form-checkbox text-indigo-600 focus:ring focus:ring-indigo-500 h-4 w-4"
-                          @change="updateTree(item, 1)"
-                        />
+                        <!-- Right arrow SVG icon -->
+                        <svg
+                          width="10px"
+                          height="10px"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4 12H20M20 12L14 6M20 12L14 18"
+                            stroke="#1C274C"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                         <label
                           :for="'checkbox-' + item.id"
                           class="text-gray-700"
@@ -257,7 +297,7 @@ const inactiveClass =
                           {{ item.name }}
                         </label>
                       </li>
-                    </ul> -->
+                    </ul>
                   </li>
                 </ul>
               </template>
