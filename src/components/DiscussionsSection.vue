@@ -1,10 +1,14 @@
+
 <script setup>
-import { defineProps } from 'vue';
-const { openDis } = defineProps(['openDis']);
+  import DiscussionComponent from '../components/DiscussionComponent.vue';
+  import AcrossTheWebComponent from '../components/AcrossTheWebComponent.vue';
+import { ref } from 'vue';
+  const activeTab = ref('discussion');
 
 </script>
 <template>
-  <div class="flex justify-center w-full shadow-bottom mb-3">
+  <div>
+    <div class="flex justify-center w-full shadow-bottom mb-3">
     <div class="flex w-full py-2 px-2">
       <div class="filters flex-1 text-1xl">Filtrest</div>
       <span class="ml-auto text-gray py-2">
@@ -41,68 +45,33 @@ const { openDis } = defineProps(['openDis']);
       </span>
     </div>
   </div>
-
-  <div class="filter-div">
-    <ul class="flex w-full">
-      <li
-        class="flex-1 text-center cursor-pointer text-sm py-2 px-4 border-b-2 border-blue-500 hover:border-blue-500 active:border-blue-500"
-      >
-        Discussion
-      </li>
-      <li
-        class="flex-1 text-center cursor-pointer text-sm py-2 px-4 border-b-2 border-transparent hover:border-blue-500"
-      >
-        Across the web
-      </li>
-    </ul>
-  </div>
-  <div class="flex border p-2" v-for="i in 5" :key="i">
-    <div class="flex-1 pr-4">
-      <div class="text-md font-bold-100 mb-2">
-        React Discussion
-        <span class="bg-gray-500 text-white text-xs py-1 px-2 rounded-md"
-          >5</span
+    <!-- Tab selection -->
+    <div class="filter-div">
+      <ul class="flex w-full">
+        <li
+          class="flex-1 text-center cursor-pointer text-sm py-2 px-4 border-b-2"
+          :class="{ 'border-blue-500': activeTab === 'discussion' }"
+          @click="activeTab = 'discussion'"
         >
-      </div>
-      <div class="flex pl-3">
-        <img
-          src="src/assets/profile3.jpeg"
-          alt="Image 1"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-        <img
-          src="src/assets/profile1.jpeg"
-          alt="Image 2"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-        <img
-          src="src/assets/profile3.jpeg"
-          alt="Image 3"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-        <img
-          src="src/assets/profile1.jpeg"
-          alt="Image 1"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-        <img
-          src="src/assets/profile3.jpeg"
-          alt="Image 2"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-        <img
-          src="src/assets/profile1.jpeg"
-          alt="Image 3"
-          class="w-7 h-7 rounded-full inline-block -ml-4"
-        />
-      </div>
+          Discussion
+        </li>
+        <li
+          class="flex-1 text-center cursor-pointer text-sm py-2 px-4 border-b-2"
+          :class="{ 'border-blue-500': activeTab === 'acrossTheWeb' }"
+          @click="activeTab = 'acrossTheWeb'"
+        >
+          Across the web
+        </li>
+      </ul>
     </div>
-    <!-- Right section -->
-    <div class="w-32">
-      <div class="flex items-center justify-end">
-        <div class="text-sm text-gray-500 font-semibold mr-2">Open</div>
-        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-      </div>
+
+    <!-- Render the corresponding component based on the active tab -->
+    <div v-if="activeTab === 'discussion'">
+      <DiscussionComponent />
+    </div>
+    <div v-else-if="activeTab === 'acrossTheWeb'">
+      <AcrossTheWebComponent />
     </div>
   </div>
 </template>
+
