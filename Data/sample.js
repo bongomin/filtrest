@@ -12,9 +12,9 @@ const posts = [
     },
     {
         createdAt: "40 mins",
-        postersImage: "src/assets/profile1.jpeg",
+        postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
         creatorName: "Jane Danny",
-        postImage: "src/assets/image1.jpg",
+        postImage: "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800",
         socialMediaIcon: "https://images.pexels.com/photos/3758133/pexels-photo-3758133.jpeg?auto=compress&cs=tinysrgb&w=800",
         postBody:
             "Hey, here's my second post. Have a great day! Duis vel congue odio. Etiam consectetur blandit nunc, sit amet fermentum augue malesuada in. Nunc fringilla massa nec neque faucibus, ut varius massa cursus. Pellentesque congue dapibus erat, vel pellentesque nisi facilisis ac. In hac habitasse platea dictumst. Donec pellentesque, justo et venenatis blandit, quam mi semper sapien, a gravida purus neque nec enim. Maecenas at dignissim enim. In hac habitasse platea dictumst.",
