@@ -268,7 +268,7 @@ const openDiscussionsSection = () => {
                     <div class="w-full flex items-center py-3 px-1">
                       <!-- User Image with rounded avatar -->
                       <img
-                        src="src/assets/profile1.jpeg"
+                        src="https://avatars.githubusercontent.com/u/39218838?s=400&u=b407be6b83e0f12427d744c39414d3214aa60b55&v=4"
                         alt="User Image"
                         class="w-8 h-8 rounded-full mr-4"
                       />
