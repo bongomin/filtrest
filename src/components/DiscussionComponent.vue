@@ -49,7 +49,7 @@ const openChatRoom = () => {
               v-for="imageNum in 8"
               :src="getImageSrc(imageNum)"
               :alt="`Image ${imageNum}`"
-              class="w-8 h-8 rounded-full inline-block -ml-4"
+              class="w-8 h-8 rounded-full inline-block -ml-2"
               :key="imageNum"
             />
             <div class="text-xs text-gray-500 ml-2">join discussion...</div>
