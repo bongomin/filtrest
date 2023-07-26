@@ -25,20 +25,20 @@ async function updateTree(interest, index) {
     if (interest.tree.length === 0) {
       if (interest.name === "Music") {
         // Simulate adding subcategories to the tree.
-        interest.tree.push({ id: 1, name: "pop", subTree: [] });
         interest.tree.push({ id: 2, name: "Electronic", subTree: [] });
         interest.tree.push({ id: 3, name: "Rock", subTree: [] });
         interest.tree.push({ id: 1, name: "Hip-hop / Rap", subTree: [] });
         interest.tree.push({ id: 2, name: "Country", subTree: [] });
         interest.tree.push({ id: 3, name: "Classical", subTree: [] });
+        interest.tree.push({ id: 1, name: "pop", subTree: [] });
       } else if (interest.name === "Food") {
         // Simulate adding subcategories to the tree.
-        interest.tree.push({ id: 1, name: "StreetFood", subTree: [] });
-        interest.tree.push({ id: 2, name: "Snaks", subTree: [] });
-        interest.tree.push({ id: 3, name: "Beverages", subTree: [] });
-        interest.tree.push({ id: 1, name: "Desserts", subTree: [] });
-        interest.tree.push({ id: 2, name: "Side Dishes", subTree: [] });
-        interest.tree.push({ id: 3, name: "Breakfast Dishes", subTree: [] });
+        interest.tree.push({ id: 1, name: "Indian", subTree: [] });
+        interest.tree.push({ id: 2, name: "Ugandan", subTree: [] });
+        interest.tree.push({ id: 3, name: "Italian", subTree: [] });
+        interest.tree.push({ id: 1, name: "Spanish", subTree: [] });
+        interest.tree.push({ id: 2, name: "German", subTree: [] });
+        interest.tree.push({ id: 3, name: "Japanese", subTree: [] });
       } else if (interest.name === "Movies") {
         interest.tree.push({ id: 1, name: "Actions", subTree: [] });
         interest.tree.push({ id: 2, name: "Commedy", subTree: [] });
@@ -59,20 +59,20 @@ async function updateTree(interest, index) {
     }
   } else {
     const selectedTreeItem = interest.subTree;
-    if (interest.name == "StreetFood") {
+    if (interest.name == "Indian") {
       selectedTreeItem.push({
         id: 201,
-        name: "Tacos",
+        name: "Chicken Tikka Masala",
         miniTree: [],
       });
       selectedTreeItem.push({
         id: 202,
-        name: "Kebabs",
+        name: "Naan",
         miniTree: [],
       });
       selectedTreeItem.push({
         id: 203,
-        name: "Poutine",
+        name: "Samosa",
         miniTree: [],
       });
     } else if (interest.name == "Snacks") {
@@ -103,7 +103,20 @@ async function updateTree(interest, index) {
         name: "Ice Cream",
         miniTree: [],
       });
+    } else if (interest.name == "Electronic") {
+      selectedTreeItem.push({
+        id: 301,
+        name: "Calvin Harris:",
+        miniTree: [],
+      });
+    } else if (interest.name == "Actions") {
+      selectedTreeItem.push({
+        id: 301,
+        name: "Mission Impossible",
+        miniTree: [],
+      });
     } else {
+      console.log("first", interest.name);
       interest.subTree = [];
     }
   }
