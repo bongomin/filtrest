@@ -37,9 +37,9 @@ const posts = [
 
 const Data = [
     {
-        filterType : "Food",
-        foodCategory: "Indian",
-        foodName: "Chicken Tikka Masala",
+        filterType: "Food",
+        filterCategoryCategory: "Indian",
+        filterName: "Chicken Tikka Masala",
         webLinkFrom: "facebook",
         createdAt: "10 mins",
         postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
@@ -53,9 +53,9 @@ const Data = [
 
     },
     {
-        filterType : "Food",
-        foodCategory: "Indian",
-        foodName: "Naan",
+        filterType: "Food",
+        filterCategoryCategory: "Indian",
+        filterName: "Naan",
         webLinkFrom: "twitter",
         createdAt: "10 mins",
         postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
@@ -69,9 +69,9 @@ const Data = [
 
     },
     {
-        filterType : "Food",
-        foodCategory: "Indian",
-        foodName: "Samosa",
+        filterType: "Food",
+        filterCategoryCategory: "Indian",
+        filterName: "Samosa",
         webLinkFrom: "twitter",
         createdAt: "10 mins",
         postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
@@ -85,9 +85,10 @@ const Data = [
 
     },
     {
-        filterType : "Music",
-        musicCategory: "Electronic",
-        musicName: "Calvin Harris",
+        filterType: "Music",
+        filterCategoryCategory: "Electronic",
+        filterName: "Calvin Harris",
+        webLinkFrom: "twitter",
         createdAt: "10 mins",
         postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
         creatorName: "Daniel Danny",
@@ -100,9 +101,10 @@ const Data = [
 
     },
     {
-        filterType : "Movies",
-        movieCategory: "Actions",
-        musicName: "Calvin Harris",
+        filterType: "Movies",
+        filterCategoryCategory: "Actions",
+        filterName: "Expendebles",
+        webLinkFrom: "twitter",
         createdAt: "10 mins",
         postersImage: "https://my-profile-murex-five.vercel.app/img/profile1.8e973a6d.jpeg",
         creatorName: "Daniel Danny",
