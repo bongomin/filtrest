@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { useSidebar } from "../composables/useSidebar";
-// import TestTree from "../components/TestTree.vue";
 import CountrySelector from "../components/CountrySector.vue";
 
 // Data properties
@@ -13,7 +12,7 @@ const interests = ref([
   { id: 1, name: "Food", tree: [] },
   { id: 2, name: "Music", tree: [] },
   { id: 3, name: "Movies", tree: [] },
-  { id: 4, name: "News", tree: [] },
+  { id: 4, name: "Sports", tree: [] },
 ]);
 
 // Functions
@@ -53,6 +52,13 @@ async function updateTree(interest, index) {
             { id: 101, name: "Science Fiction", subTree: [] },
             { id: 102, name: "Fantasy", subTree: [] },
             { id: 103, name: "Animation", subTree: [] }
+          );
+          break;
+        case "Sports":
+          interest.tree.push(
+            { id: 1, name: "Basketball", subTree: [] },
+            { id: 2, name: "Football", subTree: [] },
+            { id: 3, name: "Rugbay", subTree: [] },
           );
           break;
         default:
@@ -95,6 +101,9 @@ async function updateTree(interest, index) {
       case "Actions":
         selectedTreeItem.push({ id: 301, name: "Mission Impossible", miniTree: [] });
         break;
+       case "Basketball":
+        selectedTreeItem.push({ id: 301, name: "Philadelphia 76ers", miniTree: [] });
+        break;
       default:
         // Handle other cases
         break;
@@ -111,8 +120,6 @@ const { isOpen } = useSidebar();
 const activeClass = "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100";
 const inactiveClass = "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100";
 </script>
-
-
 <template>
   <div class="flex">
     <!-- Backdrop -->
