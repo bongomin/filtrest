@@ -1,10 +1,11 @@
 <script setup>
-import { ref,computed } from "vue";
+import { ref, computed } from "vue";
 import Sidebar from "../components/Sidebar.vue";
 import Header from "../components/Header.vue";
 import posts from "../../Data/sample";
 import DiscussionsSection from "./DiscussionsSection.vue";
 import WelcomePopup from "../components/WelcomePopup.vue";
+import UnderConstruction from "../components/UnderConstruction.vue";
 
 const dropdownOpen = ref(false);
 const activeTab = ref("recent");
@@ -319,10 +320,10 @@ const openDiscussionsSection = () => {
                     </div>
                   </div>
                   <div v-if="showPopularPosts" class="popular-posts">
-                    popular Posts
+                    <UnderConstruction page="Popular page" />
                   </div>
-                  <div v-if="showPeople" class="popular-posts">
-                    popular Posts
+                  <div v-if="showPeople" page="popular-posts">
+                    <UnderConstruction page="People's page" />
                   </div>
                 </div>
               </div>
