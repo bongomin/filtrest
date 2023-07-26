@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from "vue";
 import { useSidebar } from "../composables/useSidebar";
-import TestTree from "../components/testTree.vue";
+// import TestTree from "../components/TestTree.vue";
 import CountrySelector from "../components/CountrySector.vue";
 
+// Data properties
 const collapsed = ref({
   1: true,
 });
 
-// New data property for the interests and tree
 const interests = ref([
   { id: 1, name: "Food", tree: [] },
   { id: 2, name: "Music", tree: [] },
@@ -16,6 +16,7 @@ const interests = ref([
   { id: 4, name: "News", tree: [] },
 ]);
 
+// Functions
 function toggleCollapse(collapseId) {
   collapsed.value[collapseId] = !collapsed.value[collapseId];
 }
@@ -23,110 +24,94 @@ function toggleCollapse(collapseId) {
 async function updateTree(interest, index) {
   if (index === 0) {
     if (interest.tree.length === 0) {
-      if (interest.name === "Music") {
-        // Simulate adding subcategories to the tree.
-        interest.tree.push({ id: 2, name: "Electronic", subTree: [] });
-        interest.tree.push({ id: 3, name: "Rock", subTree: [] });
-        interest.tree.push({ id: 1, name: "Hip-hop / Rap", subTree: [] });
-        interest.tree.push({ id: 2, name: "Country", subTree: [] });
-        interest.tree.push({ id: 3, name: "Classical", subTree: [] });
-        interest.tree.push({ id: 1, name: "pop", subTree: [] });
-      } else if (interest.name === "Food") {
-        // Simulate adding subcategories to the tree.
-        interest.tree.push({ id: 1, name: "Indian", subTree: [] });
-        interest.tree.push({ id: 2, name: "Ugandan", subTree: [] });
-        interest.tree.push({ id: 3, name: "Italian", subTree: [] });
-        interest.tree.push({ id: 1, name: "Spanish", subTree: [] });
-        interest.tree.push({ id: 2, name: "German", subTree: [] });
-        interest.tree.push({ id: 3, name: "Japanese", subTree: [] });
-      } else if (interest.name === "Movies") {
-        interest.tree.push({ id: 1, name: "Actions", subTree: [] });
-        interest.tree.push({ id: 2, name: "Commedy", subTree: [] });
-        interest.tree.push({ id: 3, name: "Drama", subTree: [] });
-        interest.tree.push({ id: 101, name: "Science Fiction", subTree: [] });
-        interest.tree.push({ id: 102, name: "Fantasy", subTree: [] });
-        interest.tree.push({ id: 103, name: "Animation", subTree: [] });
-      } else if (interest.name === "News") {
-      } else {
-        // Simulate adding subcategories to the tree.
-        interest.tree.push({ id: 101, name: "Subcategory 1", subTree: [] });
-        interest.tree.push({ id: 102, name: "Subcategory 2", subTree: [] });
-        interest.tree.push({ id: 103, name: "Subcategory 3", subTree: [] });
+      switch (interest.name) {
+        case "Music":
+          interest.tree.push(
+            { id: 2, name: "Electronic", subTree: [] },
+            { id: 3, name: "Rock", subTree: [] },
+            { id: 1, name: "Hip-hop / Rap", subTree: [] },
+            { id: 2, name: "Country", subTree: [] },
+            { id: 3, name: "Classical", subTree: [] },
+            { id: 1, name: "pop", subTree: [] }
+          );
+          break;
+        case "Food":
+          interest.tree.push(
+            { id: 1, name: "Indian", subTree: [] },
+            { id: 2, name: "Ugandan", subTree: [] },
+            { id: 3, name: "Italian", subTree: [] },
+            { id: 1, name: "Spanish", subTree: [] },
+            { id: 2, name: "German", subTree: [] },
+            { id: 3, name: "Japanese", subTree: [] }
+          );
+          break;
+        case "Movies":
+          interest.tree.push(
+            { id: 1, name: "Actions", subTree: [] },
+            { id: 2, name: "Comedy", subTree: [] },
+            { id: 3, name: "Drama", subTree: [] },
+            { id: 101, name: "Science Fiction", subTree: [] },
+            { id: 102, name: "Fantasy", subTree: [] },
+            { id: 103, name: "Animation", subTree: [] }
+          );
+          break;
+        default:
+          // Handle other cases
+          break;
       }
     } else {
-      // Simulate clearing the subcategories when unchecked.
+      // Clear the subcategories when unchecked.
       interest.tree = [];
     }
   } else {
     const selectedTreeItem = interest.subTree;
-    if (interest.name == "Indian") {
-      selectedTreeItem.push({
-        id: 201,
-        name: "Chicken Tikka Masala",
-        miniTree: [],
-      });
-      selectedTreeItem.push({
-        id: 202,
-        name: "Naan",
-        miniTree: [],
-      });
-      selectedTreeItem.push({
-        id: 203,
-        name: "Samosa",
-        miniTree: [],
-      });
-    } else if (interest.name == "Snacks") {
-      selectedTreeItem.push({
-        id: 301,
-        name: "Chips",
-        miniTree: [],
-      });
-      selectedTreeItem.push({
-        id: 302,
-        name: "Popcorn",
-        miniTree: [],
-      });
-    } else if (interest.name == "Beverages") {
-      selectedTreeItem.push({
-        id: 401,
-        name: "Soda",
-        miniTree: [],
-      });
-      selectedTreeItem.push({
-        id: 402,
-        name: "Juice",
-        miniTree: [],
-      });
-    } else if (interest.name == "Desserts") {
-      selectedTreeItem.push({
-        id: 501,
-        name: "Ice Cream",
-        miniTree: [],
-      });
-    } else if (interest.name == "Electronic") {
-      selectedTreeItem.push({
-        id: 301,
-        name: "Calvin Harris:",
-        miniTree: [],
-      });
-    } else if (interest.name == "Actions") {
-      selectedTreeItem.push({
-        id: 301,
-        name: "Mission Impossible",
-        miniTree: [],
-      });
+    if (selectedTreeItem.length === 0) {
+        switch (interest.name) {
+      case "Indian":
+        selectedTreeItem.push(
+          { id: 201, name: "Chicken Tikka Masala", miniTree: [] },
+          { id: 202, name: "Naan", miniTree: [] },
+          { id: 203, name: "Samosa", miniTree: [] }
+        );
+        break;
+      case "Snacks":
+        selectedTreeItem.push(
+          { id: 301, name: "Chips", miniTree: [] },
+          { id: 302, name: "Popcorn", miniTree: [] }
+        );
+        break;
+      case "Beverages":
+        selectedTreeItem.push(
+          { id: 401, name: "Soda", miniTree: [] },
+          { id: 402, name: "Juice", miniTree: [] }
+        );
+        break;
+      case "Desserts":
+        selectedTreeItem.push({ id: 501, name: "Ice Cream", miniTree: [] });
+        break;
+      case "Electronic":
+        selectedTreeItem.push({ id: 301, name: "Calvin Harris:", miniTree: [] });
+        break;
+      case "Actions":
+        selectedTreeItem.push({ id: 301, name: "Mission Impossible", miniTree: [] });
+        break;
+      default:
+        // Handle other cases
+        break;
+    }
+
     } else {
-      console.log("first", interest.name);
       interest.subTree = [];
     }
   }
 }
 
+// Sidebar and Styling
 const { isOpen } = useSidebar();
 const activeClass = "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100";
-const inactiveClass =
-  "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100";
+const inactiveClass = "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100";
 </script>
+
 
 <template>
   <div class="flex">
