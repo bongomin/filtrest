@@ -8,6 +8,8 @@ const collapsed = ref({
   1: true,
 });
 
+const selectedFilters = ref([]);
+
 const interests = ref([
   { id: 1, name: "Food", tree: [] },
   { id: 2, name: "Music", tree: [] },
@@ -21,6 +23,7 @@ function toggleCollapse(collapseId) {
 }
 
 async function updateTree(interest, index) {
+  toggleFilterSelection(interest.name)
   if (index === 0) {
     if (interest.tree.length === 0) {
       switch (interest.name) {
@@ -114,6 +117,17 @@ async function updateTree(interest, index) {
     }
   }
 }
+
+const toggleFilterSelection = (filter) => {
+  const exists = selectedFilters.value.includes(filter);
+  if (exists) {
+    const index = selectedFilters.value.indexOf(filter);
+    selectedFilters.value.splice(index, 1);
+  } else {
+    selectedFilters.value.push(filter);
+  }
+};
+
 
 // Sidebar and Styling
 const { isOpen } = useSidebar();
@@ -280,21 +294,12 @@ const inactiveClass = "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-
                         class="flex py-2 items-center space-x-2"
                       >
                         <!-- Right arrow SVG icon -->
-                        <svg
-                          width="10px"
-                          height="10px"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 12H20M20 12L14 6M20 12L14 18"
-                            stroke="#1C274C"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
+                       <input
+                      type="checkbox"
+                      :id="'checkbox-' + item.id"
+                      class="form-checkbox text-indigo-600 focus:ring focus:ring-indigo-500 h-4 w-4"
+                      @change="updateTree(item, 2)"
+                    />
                         <label
                           :for="'checkbox-' + item.id"
                           class="text-gray-700"
