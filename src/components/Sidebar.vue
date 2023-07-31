@@ -20,6 +20,45 @@ const interests = ref([
   { id: 4, name: "Sports", tree: [] },
 ]);
 
+const emotions = ref([
+  { id: 1, name: "Happy", tree: [] },
+  { id: 2, name: "Sad", tree: [] },
+  { id: 3, name: "Nervous", tree: [] },
+  { id: 4, name: "Surprised", tree: [] },
+]);
+
+const places= ref([
+  { id: 1, name: "Taj Mahal", tree: [] },
+  { id: 2, name: "Egyptian Pyramids", tree: [] },
+  { id: 3, name: "Eiffel Tower", tree: [] },
+  { id: 4, name: "Great Wall of China", tree: [] },
+  { id: 1, name: "Statue of Liberty", tree: [] },
+  { id: 2, name: "Colosseum", tree: [] },
+  { id: 3, name: "Sydney Opera House", tree: [] },
+  { id: 4, name: "Sagrada Família", tree: [] },
+]);
+
+const colleges = ref([
+  { id: 1, name: "Harvard University", tree: [] },
+  { id: 2, name: "Stanford University", tree: [] },
+  { id: 3, name: "University of Oxford", tree: [] },
+  { id: 4, name: "Cambridge", tree: [] },
+  { id: 1, name: "University of Tokyo", tree: [] },
+  { id: 2, name: "Princeton University", tree: [] },
+]);
+
+
+const years = ref([
+  { id: 1, name: "2023", tree: [] },
+  { id: 2, name: "2022", tree: [] },
+  { id: 3, name: "2021", tree: [] },
+  { id: 4, name: "2020", tree: [] },
+  { id: 1, name: "2019", tree: [] },
+  { id: 2, name: "2018", tree: [] },
+]);
+
+
+
 // Functions
 async function updateTree(interest, index) {
   toggleFilterSelection(interest.name);
@@ -211,7 +250,7 @@ const inactiveClass =
         <!-- Collapsible 2 -->
         <div class="collapsables">
           <CollapsableInterest
-            :interests="interests"
+            :interests="emotions"
             :buttonText="'Emotion/Mood'"
             :collapseId="2"
             @updateParentTree="updateTree"
@@ -220,7 +259,7 @@ const inactiveClass =
         <!-- Collapsible 3 -->
         <div class="collapsables">
           <CollapsableInterest
-            :interests="interests"
+            :interests="places"
             :buttonText="'Place/Land mark'"
             :collapseId="3"
             @updateParentTree="updateTree"
@@ -229,7 +268,7 @@ const inactiveClass =
         <!-- Collapsible 4 -->
         <div class="collapsables">
           <CollapsableInterest
-            :interests="interests"
+            :interests="colleges"
             :buttonText="'College / Company'"
             :collapseId="4"
             @updateParentTree="updateTree"
@@ -238,7 +277,7 @@ const inactiveClass =
         <!-- Collapsible 5 -->
         <div class="collapsables">
           <CollapsableInterest
-            :interests="interests"
+            :interests="years"
             :buttonText="'Date / Stamp'"
             :collapseId="5"
             @updateParentTree="updateTree"
