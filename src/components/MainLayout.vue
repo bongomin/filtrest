@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import Sidebar from "../components/Sidebar.vue";
 import Header from "../components/Header.vue";
 import posts from "../../Data/sample";
@@ -10,6 +10,11 @@ import UnderConstruction from "../components/UnderConstruction.vue";
 const dropdownOpen = ref(false);
 const activeTab = ref("recent");
 const disOpen = ref(false);
+const allPosts = ref([]);
+
+onMounted(() => {
+  allPosts.value = posts;
+});
 
 const showRecentPosts = computed(() => activeTab.value === "recent");
 const showPopularPosts = computed(() => activeTab.value === "popular");
@@ -19,11 +24,29 @@ const openDiscussionsSection = () => {
   console.log("Open turn to true");
   disOpen.value = !disOpen.value;
 };
+
+const updatePosts = (filters = []) => {
+  filters.forEach((filter) => {
+    if(filter.tree.length > 0) {
+      allPosts.value = posts
+    }
+  })
+
+  // if (filter.length > 0) {
+  //   let newPosts = posts.filter(
+  //     (postFilter) => filter.includes(postFilter.filterType)
+  //   );
+  //   allPosts.value = newPosts;
+  // } else {
+  //  allPosts.value = posts;
+  // }
+
+};
 </script>
 
 <template>
   <div class="flex h-screen bg-gray-200 font-roboto">
-    <Sidebar />
+    <Sidebar @updatePosts="updatePosts" />
     <div class="flex-1 flex flex-col overflow-hidden">
       <Header />
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
@@ -104,7 +127,7 @@ const openDiscussionsSection = () => {
 
                     <div class="posts mt-10">
                       <div
-                        v-for="(post, index) in posts"
+                        v-for="(post, index) in allPosts"
                         :key="index"
                         class="bg-white rounded-lg shadow-md p-4 mb-4"
                       >

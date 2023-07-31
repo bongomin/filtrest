@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useSidebar } from "../composables/useSidebar";
 import CountrySelector from "../components/CountrySector.vue";
+const emit = defineEmits();
 
 // Data properties
 const collapsed = ref({
@@ -126,6 +127,8 @@ const toggleFilterSelection = (filter) => {
   } else {
     selectedFilters.value.push(filter);
   }
+  console.log('working');
+  emit('updatePosts', interests.value,filter)
 };
 
 
