@@ -21,40 +21,39 @@ const interests = ref([
 ]);
 
 const emotions = ref([
-  { id: 1, name: "Happy", tree: [] },
-  { id: 2, name: "Sad", tree: [] },
-  { id: 3, name: "Nervous", tree: [] },
-  { id: 4, name: "Surprised", tree: [] },
+  { id: 5, name: "Happy", tree: [] },
+  { id: 6, name: "Sad", tree: [] },
+  { id: 7, name: "Nervous", tree: [] },
+  { id: 8, name: "Surprised", tree: [] },
 ]);
 
-const places= ref([
-  { id: 1, name: "Taj Mahal", tree: [] },
-  { id: 2, name: "Egyptian Pyramids", tree: [] },
-  { id: 3, name: "Eiffel Tower", tree: [] },
-  { id: 4, name: "Great Wall of China", tree: [] },
-  { id: 1, name: "Statue of Liberty", tree: [] },
-  { id: 2, name: "Colosseum", tree: [] },
-  { id: 3, name: "Sydney Opera House", tree: [] },
-  { id: 4, name: "Sagrada Família", tree: [] },
+const places = ref([
+  { id: 101, name: "Taj Mahal", tree: [] },
+  { id: 102, name: "Egyptian Pyramids", tree: [] },
+  { id: 103, name: "Eiffel Tower", tree: [] },
+  { id: 104, name: "Great Wall of China", tree: [] },
+  { id: 105, name: "Statue of Liberty", tree: [] },
+  { id: 106, name: "Colosseum", tree: [] },
+  { id: 107, name: "Sydney Opera House", tree: [] },
+  { id: 108, name: "Sagrada Família", tree: [] },
 ]);
 
 const colleges = ref([
-  { id: 1, name: "Harvard University", tree: [] },
-  { id: 2, name: "Stanford University", tree: [] },
-  { id: 3, name: "University of Oxford", tree: [] },
-  { id: 4, name: "Cambridge", tree: [] },
-  { id: 1, name: "University of Tokyo", tree: [] },
-  { id: 2, name: "Princeton University", tree: [] },
+  { id: 201, name: "Harvard University", tree: [] },
+  { id: 202, name: "Stanford University", tree: [] },
+  { id: 203, name: "University of Oxford", tree: [] },
+  { id: 204, name: "Cambridge", tree: [] },
+  { id: 205, name: "University of Tokyo", tree: [] },
+  { id: 206, name: "Princeton University", tree: [] },
 ]);
 
-
 const years = ref([
-  { id: 1, name: "2023", tree: [] },
-  { id: 2, name: "2022", tree: [] },
-  { id: 3, name: "2021", tree: [] },
-  { id: 4, name: "2020", tree: [] },
-  { id: 1, name: "2019", tree: [] },
-  { id: 2, name: "2018", tree: [] },
+  { id: 301, name: "2023", tree: [] },
+  { id: 302, name: "2022", tree: [] },
+  { id: 303, name: "2021", tree: [] },
+  { id: 304, name: "2020", tree: [] },
+  { id: 305, name: "2019", tree: [] },
+  { id: 306, name: "2018", tree: [] },
 ]);
 
 
