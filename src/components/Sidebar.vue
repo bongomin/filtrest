@@ -110,8 +110,8 @@ async function updateTree(interest, index) {
       interest.tree = [];
     }
   } else {
-    const selectedTreeItem = interest.subTree;
-    if (selectedTreeItem.length === 0) {
+    const selectedTreeItem = interest.subTree ? interest.subTree : interest.miniTree;
+    if (selectedTreeItem?.length === 0) {
       switch (interest.name) {
         case "Indian":
           selectedTreeItem.push(
@@ -174,7 +174,6 @@ const toggleFilterSelection = (filter) => {
   } else {
     selectedFilters.value.push(filter);
   }
-  console.log("working");
   emit("updateTree", interests.value, filter);
 };
 

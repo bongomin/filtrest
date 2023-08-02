@@ -50,8 +50,9 @@
       </span>
     </button>
     <div
-     v-if="collapsed[collapseId]"
-    class="p-2 bg-white border-t border-gray-200">
+      v-if="collapsed[collapseId]"
+      class="p-2 bg-white border-t border-gray-200"
+    >
       <!-- Search Field ... -->
       <div class="relative mb-4">
         <input
@@ -144,6 +145,7 @@
 
 <script setup>
 import { ref, defineProps, defineEmits } from "vue";
+const selectedFilters = ref([]);
 
 const emit = defineEmits();
 
@@ -154,25 +156,23 @@ const collapsed = ref({
   1: true,
 });
 
-
 function toggleCollapse(collapseId) {
   collapsed.value[props.collapseId] = !collapsed.value[props.collapseId];
 }
 
 function updateTree(interest, index) {
   emit("updateParentTree", interest, index);
+  toggleFilterSelection(interest);
 }
 
-// const toggleFilterSelection = (filter) => {
-//     emit("updateToggleFilterSelection", filter);
-//   const exists = selectedFilters.value.includes(filter);
-//   if (exists) {
-//     const index = selectedFilters.value.indexOf(filter);
-//     selectedFilters.value.splice(index, 1);
-//   } else {
-//     selectedFilters.value.push(filter);
-//   }
-//   console.log('working');
-//   emit('updatePosts', interests.value,filter)
-// };
+const toggleFilterSelection = (filter) => {
+  const exists = selectedFilters.value.includes(filter);
+  if (exists) {
+    const index = selectedFilters.value.indexOf(filter);
+    selectedFilters.value.splice(index, 1);
+  } else {
+    selectedFilters.value.push(filter);
+  }
+  emit("updatePosts", interests.value, filter);
+};
 </script>
