@@ -27,10 +27,10 @@ const openDiscussionsSection = () => {
 
 const updatePosts = (filters = []) => {
   filters.forEach((filter) => {
-    if(filter.tree.length > 0) {
-      allPosts.value = posts
+    if (filter.tree.length > 0) {
+      allPosts.value = posts;
     }
-  })
+  });
 
   // if (filter.length > 0) {
   //   let newPosts = posts.filter(
@@ -40,7 +40,6 @@ const updatePosts = (filters = []) => {
   // } else {
   //  allPosts.value = posts;
   // }
-
 };
 </script>
 
@@ -145,6 +144,7 @@ const updatePosts = (filters = []) => {
                             <span class="text-gray-600 text-sm">
                               {{ post.createdAt }}
                               <svg
+                                v-if="post.webLinkFrom === 'facebook'"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="#475182"
                                 viewBox="0 0 24 24"
@@ -152,6 +152,30 @@ const updatePosts = (filters = []) => {
                               >
                                 <path
                                   d="M21.6 0H2.4C1.1 0 0 1.1 0 2.4v19.2C0 22.9 1.1 24 2.4 24h11.5v-9.3h-3.1v-3h3.1V8.5c0-3.1 2-3.8 3.4-3.8.9 0 1.8.2 2.1.3v3h-1.4c-1.1 0-1.3.5-1.3 1.3V12h2.6l-.7 3h-1.9v9.3h3.7c1.3 0 2.4-1.1 2.4-2.4V2.4C24 1.1 22.9 0 21.6 0z"
+                                />
+                              </svg>
+
+                              <svg
+                                v-else-if="post.webLinkFrom === 'twitter'"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="#475182"
+                                viewBox="0 0 24 24"
+                                class="w-4 h-4 inline-block ml-1 rounded-full"
+                              >
+                                <path
+                                  d="M24 4.531c-.885.387-1.84.65-2.838.77a5.058 5.058 0 002.219-2.796 9.93 9.93 0 01-3.157 1.205 5.014 5.014 0 00-8.555 4.57A14.154 14.154 0 011.706 3.62a4.983 4.983 0 001.543 6.645A4.967 4.967 0 011.4 9.06v.055a4.983 4.983 0 004.001 4.882 5.043 5.043 0 01-2.258.086 4.986 4.986 0 004.65 3.454A10.055 10.055 0 010 19.13a14.127 14.127 0 007.623 2.23c9.12 0 14.088-7.545 14.088-14.088l-.017-.64c.956-.687 1.786-1.555 2.442-2.537l-.884-.038z"
+                                />
+                              </svg>
+
+                              <svg
+                                v-else-if="post.webLinkFrom === 'instagram'"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="#475182"
+                                viewBox="0 0 24 24"
+                                class="w-4 h-4 inline-block ml-1 rounded-full"
+                              >
+                                <path
+                                  d="M12 0a12 12 0 1 0 12 12 12 12 0 0 0-12-12zm0 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10zm5.36-16.636a2.17 2.17 0 1 0 0 4.34 2.17 2.17 0 0 0 0-4.34zm-5.36 3.908a4.07 4.07 0 1 0 4.068 4.068 4.07 4.07 0 0 0-4.068-4.068zm5.796 6.624a7.24 7.24 0 0 1-7.324 7.324 7.24 7.24 0 0 1-7.324-7.324 7.24 7.24 0 0 1 7.324-7.324 7.24 7.24 0 0 1 7.324 7.324zm3.408-10.476a.678.678 0 0 0-.68.68v4.592a.678.678 0 0 0 .68.68h4.592a.678.678 0 0 0 .68-.68v-4.592a.678.678 0 0 0-.68-.68h-4.592zm8.884.476c0 .334-.27.604-.604.604-.334 0-.604-.27-.604-.604v-1.112c0-.334.27-.604.604-.604.334 0 .604.27.604.604v1.112z"
                                 />
                               </svg>
                             </span>
