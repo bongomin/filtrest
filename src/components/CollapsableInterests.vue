@@ -144,8 +144,10 @@
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits } from "vue";
-const selectedFilters = ref([]);
+import { ref, defineProps, defineEmits, reactive,toRefs } from "vue";
+const selectedFilters = reactive([]);
+const test = reactive([]);
+console.log("Not changed",selectedFilters)
 
 const emit = defineEmits();
 
@@ -162,17 +164,16 @@ function toggleCollapse(collapseId) {
 
 function updateTree(interest, index) {
   emit("updateParentTree", interest, index);
-  toggleFilterSelection(interest);
+  
 }
 
 const toggleFilterSelection = (filter) => {
-  const exists = selectedFilters.value.includes(filter);
+  const exists = selectedFilters.includes(filter);
   if (exists) {
-    const index = selectedFilters.value.indexOf(filter);
-    selectedFilters.value.splice(index, 1);
+    const index = selectedFilters.indexOf(filter);
+    selectedFilters.splice(index, 1);
   } else {
-    selectedFilters.value.push(filter);
+    selectedFilters.push(filter);
   }
-  emit("updatePosts", interests.value, filter);
 };
 </script>
