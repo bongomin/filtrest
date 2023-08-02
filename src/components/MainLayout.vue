@@ -12,6 +12,13 @@ const activeTab = ref("recent");
 const disOpen = ref(false);
 const allPosts = ref([]);
 
+const isLoading = ref(true);
+
+// Simulate a delay to simulate data loading
+setTimeout(() => {
+  isLoading.value = false;
+}, 1500);
+
 onMounted(() => {
   allPosts.value = posts;
 });
@@ -124,7 +131,31 @@ const updatePosts = (filters = []) => {
                       <span class="text-2xm">Feeds</span>
                     </div>
 
-                    <div class="posts mt-10">
+                    <!-- Spinner loader for posts -->
+                    <div v-if="isLoading" class="flex justify-center mt-8">
+                  <svg
+                    class="animate-spin h-6 w-6 text-gray-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.96 7.96 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                    </div>
+
+                    <div v-else class="posts mt-10">
                       <div
                         v-for="(post, index) in allPosts"
                         :key="index"
@@ -383,6 +414,7 @@ const updatePosts = (filters = []) => {
         </div>
       </main>
     </div>
-    <WelcomePopup />
+    <!-- comment the modal -->
+    <!-- <WelcomePopup /> -->
   </div>
 </template>
