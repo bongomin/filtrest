@@ -60,7 +60,6 @@ const years = ref([
 
 // Functions
 async function updateTree(interest, index) {
-  toggleFilterSelection(interest.name);
   if (index === 0) {
     if (interest.tree.length === 0) {
       switch (interest.name) {
@@ -166,16 +165,21 @@ async function updateTree(interest, index) {
   }
 }
 
-const toggleFilterSelection = (filter) => {
-  const exists = selectedFilters.value.includes(filter);
-  if (exists) {
-    const index = selectedFilters.value.indexOf(filter);
-    selectedFilters.value.splice(index, 1);
-  } else {
-    selectedFilters.value.push(filter);
-  }
-  emit("updateTree", interests.value, filter);
-};
+// const toggleFilterSelection = (filter) => {
+//   const exists = selectedFilters.value.includes(filter);
+//   if (exists) {
+//     const index = selectedFilters.value.indexOf(filter);
+//     selectedFilters.value.splice(index, 1);
+//   } else {
+//     selectedFilters.value.push(filter);
+//   }
+//   emit("updateTree", interests.value, filter);
+// };
+
+const test1= (d) => {
+  console.log("wooooo")
+
+}
 
 // Sidebar and Styling
 const { isOpen } = useSidebar();
@@ -243,6 +247,7 @@ const inactiveClass =
             :buttonText="'Interests'"
             :collapseId="1"
             @updateParentTree="updateTree"
+            @dannnny="test1"
           />
         </div>
         <!-- Collapsible 2 -->

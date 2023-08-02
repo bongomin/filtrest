@@ -1,11 +1,20 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted,onBeforeMount } from "vue";
 import Sidebar from "../components/Sidebar.vue";
 import Header from "../components/Header.vue";
 import posts from "../../Data/sample";
 import DiscussionsSection from "./DiscussionsSection.vue";
 import WelcomePopup from "../components/WelcomePopup.vue";
 import UnderConstruction from "../components/UnderConstruction.vue";
+
+// pinia data store
+import { useDataStore } from '../../store/dataStore';
+const dataStore = useDataStore();
+
+onBeforeMount(() => {
+  // Load data into the store when the component is about to mount
+  dataStore.setData(posts);
+});
 
 const dropdownOpen = ref(false);
 const activeTab = ref("recent");
@@ -20,7 +29,7 @@ setTimeout(() => {
 }, 1500);
 
 onMounted(() => {
-  allPosts.value = posts;
+  allPosts.value = dataStore.allPosts
 });
 
 const showRecentPosts = computed(() => activeTab.value === "recent");

@@ -144,10 +144,9 @@
 </template>
 
 <script setup>
-import { ref, defineProps, defineEmits, reactive,toRefs } from "vue";
+import { ref, defineProps, defineEmits, reactive, toRefs } from "vue";
 const selectedFilters = reactive([]);
 const test = reactive([]);
-console.log("Not changed",selectedFilters)
 
 const emit = defineEmits();
 
@@ -164,7 +163,6 @@ function toggleCollapse(collapseId) {
 
 function updateTree(interest, index) {
   emit("updateParentTree", interest, index);
-  
 }
 
 const toggleFilterSelection = (filter) => {
