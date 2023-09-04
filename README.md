@@ -32,12 +32,11 @@ Before you begin, ensure you have met the following requirements:
    ```shell
    cd filtrest
 
-3. Install the project dependencies:
+Install the project dependencies:
 
 ```shell
    npm install or npm i
 
-4. To run Filtrest in development mode, use the following command:
+To run Filtrest in development mode, use the following command:
 ```shell
    npm run serve
-
