@@ -1,4 +1,6 @@
 # Filtrest - Your Ultimate Web Data Filtering Application
+file:///home/comzinetech/Pictures/Screenshots/Screenshot%20from%202023-09-04%2008-57-40.png
+![Screenshot from 2023-09-04 08-58-09](https://github.com/bongomin/filtrest/assets/39218838/1339db14-c9a5-4afa-b7a5-23af056ac537)
 
 
 Filtrest is a powerful web application developed using Vue.js and Pinia, designed to revolutionize the way users search and filter data across the web. With Filtrest, you can effortlessly refine your online searches, access categorized information, and explore data from various credible sources on the internet.
@@ -38,5 +40,4 @@ Before you begin, ensure you have met the following requirements:
 4. To run Filtrest in development mode, use the following command:
 ```shell
    npm run serve
-
 
